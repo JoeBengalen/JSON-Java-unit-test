@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -1600,7 +1601,7 @@ public class JSONObjectTest {
         JSONArray jsonArray = new JSONArray(jsonArrayStr);
         assertTrue("jsonArray valueToString() incorrect",
                 JSONObject.valueToString(jsonArray).equals(jsonArray.toString()));
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new LinkedHashMap<String, String>();
         map.put("key1", "val1");
         map.put("key2", "val2");
         map.put("key3", "val3");

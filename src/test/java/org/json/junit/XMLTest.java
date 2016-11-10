@@ -731,7 +731,7 @@ public class XMLTest {
      */
     @Test
     public void testToJSONArray_jsonOutput() {
-        final String originalXml = "<root><id>01</id><id>1</id><id>00</id><id>0</id><item id=\"01\"/><title>True</title></root>";
+        final String originalXml = "<root><item id=\"01\"/><id>01</id><id>1</id><id>00</id><id>0</id><title>True</title></root>";
         final String expectedJsonString = "{\"root\":{\"item\":{\"id\":\"01\"},\"id\":[\"01\",1,\"00\",0],\"title\":true}}";
         final JSONObject actualJsonOutput = XML.toJSONObject(originalXml, false);
 
@@ -754,7 +754,7 @@ public class XMLTest {
      */
     @Test
     public void testToJsonXML() {
-        final String originalXml = "<root><id>01</id><id>1</id><id>00</id><id>0</id><item id=\"01\"/><title>True</title></root>";
+        final String originalXml = "<root><item id=\"01\"/><id>01</id><id>1</id><id>00</id><id>0</id><title>True</title></root>";
         final String expectedJsonString = "{\"root\":{\"item\":{\"id\":\"01\"},\"id\":[\"01\",\"1\",\"00\",\"0\"],\"title\":\"True\"}}";
 
         final JSONObject json = XML.toJSONObject(originalXml,true);
